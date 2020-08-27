@@ -9,6 +9,7 @@ import WeatherIcon from './WeatherIcon';
 import styled from 'styled-components';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import Forecast5DayChart from '../ForecastChart/Forecast5DayChart';
 
 
 
@@ -25,9 +26,15 @@ const WeatherList = () => {
 
 
     return (
+<>
+{
+                groupbyDate && <Forecast5DayChart days={groupbyDate} />
+            }
 
 
         <View>
+
+          
 
             {
                 groupbyDate && groupbyDate.map(item =>
@@ -66,6 +73,8 @@ const WeatherList = () => {
             }
 
         </View>
+
+        </>
 
 
 

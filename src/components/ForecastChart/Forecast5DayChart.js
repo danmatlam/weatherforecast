@@ -2,17 +2,20 @@ import React from 'react'
 import Chart from './Chart';
 import { useDispatch, useSelector } from "react-redux";
 
-const Forecast5DayChart = ({ day }) => {
+const Forecast5DayChart = ({ days }) => {
+  debugger
 
   const data = []
 
-  const entries = day.forecast.map(item =>
+  const entries = days.map(item =>
     ({
-      x: item.hour,
-      y: Math.floor(item.main.temp),
-    }))
+      x: item.date,
+      y: item.temp_max,
+    }));
+
+
   data.push({
-    id: day.date,
+    id: '',
     data: entries
   })
 
