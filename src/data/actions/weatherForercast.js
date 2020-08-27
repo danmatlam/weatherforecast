@@ -10,7 +10,8 @@ import {
 const OWP_KEY = "67621edb94d7a57a0f4bbdc93df84cc4";
 
 const GYE = "3657509";
-const CITY_ID = GYE;
+const NYC = "5128581"
+const CITY_ID = NYC;
 
 
 
