@@ -11,7 +11,8 @@ const OWP_KEY = "67621edb94d7a57a0f4bbdc93df84cc4";
 
 // const GYE = "3657509";
 const NYC = "5128581"
-const CITY_ID = NYC;
+const CH = "3873544"
+const CITY_ID = CH;
 
 
 

@@ -16,63 +16,63 @@ import Forecast5DayChart from '../ForecastChart/Forecast5DayChart';
 const WeatherList = () => {
 
 
-    // const dispatch = useDispatch();
-    // useEffect(() => {
-    //     dispatch({ type: GET_WEATHER_FORECAST, payload: {} });
-    // }, []);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch({ type: GET_WEATHER_FORECAST, payload: {} });
+    }, []);
 
     const weatherForecast = useSelector(state => state.weatheForecast);
     const { groupbyDate, city } = weatherForecast;
 
 
     return (
-<>
-{
-                groupbyDate && <Forecast5DayChart days={groupbyDate} />
-            }
+        <>
 
 
-        <View>
+            <View>
 
-          
 
-            {
-                groupbyDate && groupbyDate.map(item =>
-                    <ListItem>
-                        <Link to={`/${item.dayofWeek}`}>
 
-                            <List.Item>
-                                <List.Item.Meta
-                                    avatar={<WeatherIcon icon={item.weather.main} />}
-                                    title={<Title>{item.dayofWeek}</Title>}
-                                    description={<Subtitle>{moment(item.date).format("ddd DD MMM")}</Subtitle>}
-                                />
-                            </List.Item>
+                {
+                    groupbyDate && groupbyDate.map(item =>
+                        <ListItem>
+                            <Link to={`/${item.dayofWeek}`}>
 
-                            <Temperature>
-                                <Max>
-                                    {item.temp_max} °C
+                                <List.Item>
+                                    <List.Item.Meta
+                                        avatar={<WeatherIcon icon={item.weather.main} />}
+                                        title={<Title>{item.dayofWeek}</Title>}
+                                        description={<Subtitle>{moment(item.date).format("ddd DD MMM")}</Subtitle>}
+                                    />
+                                </List.Item>
+
+                                <Temperature>
+                                    <Max>
+                                        {item.temp_max} °C
                             </Max>
-                                <Min>
-                                    {item.temp_min} °C
+                                    <Min>
+                                        {item.temp_min} °C
                             </Min>
-                            </Temperature>
+                                </Temperature>
 
-                            <Box>
-                                <City>
-                                    {city.name}, {city.country}
-                                </City>
+                                <Box>
+                                    <City>
+                                        {city.name}, {city.country}
+                                    </City>
 
-                            </Box>
-                        </Link>
+                                </Box>
+                            </Link>
 
-                    </ListItem>
+                        </ListItem>
 
 
-                )
-            }
+                    )
+                }
 
-        </View>
+            </View>
+
+            {groupbyDate && <Forecast5DayChart days={groupbyDate} />}
+
 
         </>
 
@@ -86,12 +86,18 @@ const View = styled.div`
     display:flex;
     flex-direction:row;
     overflow:scroll;
+    background-color:#000000;
+    padding:.9em;
+
 `;
 const ListItem = styled.div`
+    margin:.9em;
+
+    padding:.9em;
+
     display:flex;
     flex-direction:column;
-    margin:1.2em;
-    min-width:21rem;
+    min-width:18em;
     cursor:pointer;
     border-radius:15pt;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
@@ -103,6 +109,8 @@ const ListItem = styled.div`
         /* box-shadow: 8px 28px 50px rgba(39,44,49,.07), 1px 6px 12px rgba(39,44,49,.04); */
         transition: all .4s ease; 
     };
+
+    background-color:white;
 
 
 

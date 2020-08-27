@@ -24,9 +24,6 @@ const Forecast5DayChart = ({ days }) => {
 
   return (
     <>
-
-      <h1>Chart</h1>
-
       <div style={{ height: '40vh' }}>
         <Chart data={data} />
 

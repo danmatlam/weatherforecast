@@ -18,15 +18,12 @@ const App = () => {
   return (
     <ReduxWrap>
       <Router>
-
-        <WeatherList/>
-
-
         <Switch>
+          <Route exact path="/">
+            <WeatherList />
+          </Route>
           <Route path="/:id" children={<Child />} />
         </Switch>
-
-
       </Router>
 
 
