@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
-import { List, Card } from 'antd';
+import { List } from 'antd';
 import WeatherIcon from './WeatherIcon';
 
-import moment from 'moment';
-import JSONTreeComponent from 'react-json-tree';
+
 
 const WeatherHourly = ({ data }) => {
     return (
@@ -33,11 +32,7 @@ const WeatherHourly = ({ data }) => {
 }
 
 
-const View = styled.div`
-    display:flex;
-    flex-direction:row;
-    overflow:scroll;
-`;
+
 
 const ListItem = styled.div`
     display:flex;
@@ -57,32 +52,13 @@ const ListItem = styled.div`
     };
 `;
 
-const Title = styled.h1`
-   font-size:1.2em;
-   text-transform: capitalize;
-    font-weight:700;
-`;
 
-const Subtitle = styled.h1`
-   font-size:.9em;
-   text-transform: capitalize;
-`;
 
-const City = styled.span`
-    font-size:1.2em;
-`
-const Temperature = styled.div`
-    text-align:center;
-    margin:0;
-`
 const Max = styled.h2`
     font-size:3em;
     margin:.3em;
 `
-const Min = styled.h2`
-    font-size:1.2em;
-    margin:.3em;
-`
+
 const Box = styled.div`
   text-align:center;
   margin:1.2em;

@@ -1,6 +1,5 @@
-import React from 'react'
-import ReduxWrap from './data/ReduxWrap'
-
+import React from 'react';
+import ReduxWrap from './redux/ReduxWrap';
 
 import {
   BrowserRouter as Router,
@@ -14,18 +13,23 @@ import WeatherList from './components/weather/WeatherList'
 import WeatherProfile from './components/weather/WeatherProfile';
 
 const App = () => {
+
+
   return (
     <ReduxWrap>
       <Router>
 
-        <div style={{padding:'3em', backgroundColor:'#fcfcfc'}}>
-        <WeatherList />
+        <WeatherList/>
 
-        </div>
+
         <Switch>
           <Route path="/:id" children={<Child />} />
         </Switch>
+
+
       </Router>
+
+
     </ReduxWrap>
   )
 };
@@ -34,10 +38,10 @@ const Child = () => {
 
   let { id } = useParams();
 
-  return  <div style={{padding:'3em', backgroundColor:'#fcfcfc'}}>
+  return <div style={{ padding: '3em', backgroundColor: '#fcfcfc' }}>
 
-  <WeatherProfile day={id}/>
-</div>
+    <WeatherProfile day={id} />
+  </div>
 
 }
 

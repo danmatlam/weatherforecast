@@ -1,5 +1,4 @@
 import React from 'react'
-import { WiCloudy, WiRain } from "react-icons/wi";
 
 const WeatherIcon = ({ icon }) => {
 

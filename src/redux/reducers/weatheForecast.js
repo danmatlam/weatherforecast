@@ -86,7 +86,7 @@ class forecastFormat {
     getMin(currentGroup) {
         let min = 0;
         currentGroup.forEach((element, index) => {
-            if (index == 0) {
+            if (index === 0) {
                 min = element.main.temp_min;
             } else if (element.main.temp_min < min) {
                 min = element.main.temp_min
@@ -98,7 +98,7 @@ class forecastFormat {
     getMax(currentGroup) {
         let max = 0;
         currentGroup.forEach((element, index) => {
-            if (index == 0) {
+            if (index === 0) {
                 max = element.main.temp_max;
             } else if (element.main.temp_max > max) {
                 max = element.main.temp_max

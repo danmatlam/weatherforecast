@@ -36,9 +36,10 @@ function* watcherSaga() {
 const sagaMiddleWare = createSagaMiddleware();
 
 // INICAR STORE
-const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-const store = createStore(reducers, compose(applyMiddleware(sagaMiddleWare), reduxDevTools));
+// const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+// const store = createStore(reducers, compose(applyMiddleware(sagaMiddleWare), reduxDevTools));
 
+const store = createStore(reducers, compose(applyMiddleware(sagaMiddleWare)));
 // LANZAR MIDDLEWARE
 sagaMiddleWare.run(watcherSaga);
 

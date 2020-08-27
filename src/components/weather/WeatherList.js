@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { GET_WEATHER_FORECAST } from '../../data/constants'
+import { GET_WEATHER_FORECAST } from '../../redux/constants'
 
 import { List, Card } from 'antd';
 import WeatherIcon from './WeatherIcon';
@@ -28,11 +28,11 @@ const WeatherList = () => {
 
 
         <View>
+
             {
                 groupbyDate && groupbyDate.map(item =>
                     <ListItem>
                         <Link to={`/${item.dayofWeek}`}>
-
 
                             <List.Item>
                                 <List.Item.Meta
