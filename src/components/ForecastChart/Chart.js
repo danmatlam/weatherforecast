@@ -31,7 +31,7 @@ const MyResponsiveLine = ({ data /* see data tab */ }) => (
             legendOffset: -40,
             legendPosition: 'middle'
         }}
-        colors={{ scheme: 'nivo' }}
+        colors={{ scheme: 'purple_orange' }}
         pointSize={10}
         pointColor={{ theme: 'background' }}
         pointBorderWidth={2}

@@ -9,7 +9,7 @@ const Forecast5DayChart = ({ days }) => {
 
   const entries = days.map(item =>
     ({
-      x: item.date,
+      x: item.dayofWeek,
       y: item.temp_max,
     }));
 
@@ -20,13 +20,10 @@ const Forecast5DayChart = ({ days }) => {
   })
 
 
-
-
   return (
     <>
       <div style={{ height: '40vh' }}>
         <Chart data={data} />
-
       </div>
     </>
 

@@ -5,36 +5,56 @@ import WeatherIcon from './WeatherIcon';
 
 
 
-const WeatherHourly = ({ data }) => {
+const WeatherHourly = ({ forecast }) => {
     return (
 
+        <View>
 
-        <ListItem>
+{
+        forecast ? forecast.map(item => (
+            <ListItem>
+
+                <List.Item>
+                    <List.Item.Meta
+                        avatar={<WeatherIcon icon={item.weather[0].main} />}
+                        title={
+                            <Max>
+                                {Math.floor(item.main.temp)} °C
+                            </Max>
+                        }
+
+                    />
+                </List.Item>
+                <Box>
+                    {item.hour}
+                </Box>
+
+            </ListItem>
+        )) : <h1> Cargando </h1>}
+
+        </View>
 
 
-            <List.Item>
-                <List.Item.Meta
-                    avatar={<WeatherIcon icon={data.weather[0].main} />}
-                    title={
-                        <Max>
-                            {Math.floor(data.main.temp)} °C
-                        </Max>
-                    }
 
-                />
-            </List.Item>
-            <Box>
-                {data.hour}
-            </Box>
 
-        </ListItem>
+
     );
 }
 
 
+const View = styled.div`
+    display:flex;
+    flex-direction:row;
+    overflow:scroll;
+    background-color:#f2f2f2;
+    padding:.9em;
+
+`;
 
 
 const ListItem = styled.div`
+    background-color:white;
+
     display:flex;
     flex-direction:column;
     margin:1.2em;

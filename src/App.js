@@ -35,10 +35,7 @@ const Child = () => {
 
   let { id } = useParams();
 
-  return <div style={{ padding: '3em', backgroundColor: '#fcfcfc' }}>
-
-    <WeatherProfile day={id} />
-  </div>
+  return  <WeatherProfile day={id} />
 
 }
 

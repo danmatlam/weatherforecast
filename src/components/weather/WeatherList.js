@@ -11,7 +11,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 import Forecast5DayChart from '../ForecastChart/Forecast5DayChart';
 
-
+import { Title } from './../common/Title'
 
 const WeatherList = () => {
 
@@ -28,11 +28,8 @@ const WeatherList = () => {
     return (
         <>
 
-
+            <Title title="Pronóstico del tiempo" />
             <View>
-
-
-
                 {
                     groupbyDate && groupbyDate.map(item =>
                         <ListItem>
@@ -41,7 +38,7 @@ const WeatherList = () => {
                                 <List.Item>
                                     <List.Item.Meta
                                         avatar={<WeatherIcon icon={item.weather.main} />}
-                                        title={<Title>{item.dayofWeek}</Title>}
+                                        title={<AvatarTitle>{item.dayofWeek}</AvatarTitle>}
                                         description={<Subtitle>{moment(item.date).format("ddd DD MMM")}</Subtitle>}
                                     />
                                 </List.Item>
@@ -71,6 +68,10 @@ const WeatherList = () => {
 
             </View>
 
+
+
+            <Title title="Evolución del tiempo en °C" />
+
             {groupbyDate && <Forecast5DayChart days={groupbyDate} />}
 
 
@@ -86,18 +87,20 @@ const View = styled.div`
     display:flex;
     flex-direction:row;
     overflow:scroll;
-    background-color:#000000;
+    background-color:#f2f2f2;
     padding:.9em;
 
 `;
 const ListItem = styled.div`
+    background-color:white;
+
     margin:.9em;
 
     padding:.9em;
 
     display:flex;
     flex-direction:column;
-    min-width:18em;
+    min-width:30em;
     cursor:pointer;
     border-radius:15pt;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
@@ -110,20 +113,19 @@ const ListItem = styled.div`
         transition: all .4s ease; 
     };
 
-    background-color:white;
 
 
 
 `;
 
-const Title = styled.h1`
-   font-size:1.2em;
+const AvatarTitle = styled.h1`
+   font-size:1.5em;
    text-transform: capitalize;
     font-weight:700;
 `;
 
 const Subtitle = styled.h1`
-   font-size:.9em;
+   font-size:1.2em;
    text-transform: capitalize;
 `;
 
