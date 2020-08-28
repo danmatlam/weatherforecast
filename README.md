@@ -1,13 +1,12 @@
 Este proyecto fue creado a partir de [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo
 
-
-### `Demo en ejecución`
-Pueddes revisar [El demo](https://weatherforecast-servissenior.herokuapp.com/) aqui.
+Puedes revisar [El demo aquí](https://weatherforecast-servissenior.herokuapp.com/) 
 
 ## Available Scripts
 
-En la raíz del proyecto puedes ejecutar:
+Tambíen puedes probarlo localmente. En la raíz del proyecto puedes ejecutar:
 
 ### `yarn dev`
 Esto levantará el proyecto en modo de desarrolllor <br />
